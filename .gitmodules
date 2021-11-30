@@ -1,0 +1,3 @@
+[submodule "cue.mod/pkg/github.com/grafana/grafana"]
+	path = cue.mod/pkg/github.com/grafana/grafana
+	url = ssh+git://git@github.com/grafana/grafana
