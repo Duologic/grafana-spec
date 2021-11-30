@@ -1,4 +1,4 @@
-module dashboard-spec
+module grafana-spec
 
 go 1.17
 
