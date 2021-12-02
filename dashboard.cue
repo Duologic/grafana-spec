@@ -39,9 +39,9 @@
         refresh_intervals: [...string] | *["5s", "10s", "30s", "1m", "5m", "15m", "30m", "1h", "2h", "1d"]
     }
     // Templating.
-    templating?: list: [...{...}]
+    templating?:  [...{...}]
     // Annotations.
-    annotations?: list: [...{
+    annotations?:  [...{
         builtIn: uint | *0
         // Datasource to use for annotation.
         datasource: string

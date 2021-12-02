@@ -139,80 +139,64 @@
                   }
                },
                "templating": {
-                  "type": "object",
-                  "required": [
-                     "list"
-                  ],
-                  "properties": {
-                     "list": {
-                        "description": "Templating.",
-                        "type": "array",
-                        "items": {
-                           "type": "object"
-                        }
-                     }
+                  "description": "Templating.",
+                  "type": "array",
+                  "items": {
+                     "type": "object"
                   }
                },
                "annotations": {
-                  "type": "object",
-                  "required": [
-                     "list"
-                  ],
-                  "properties": {
-                     "list": {
-                        "description": "Annotations.",
-                        "type": "array",
-                        "items": {
-                           "type": "object",
-                           "required": [
-                              "builtIn",
-                              "datasource",
-                              "enable",
-                              "type",
-                              "showIn"
-                           ],
-                           "properties": {
-                              "builtIn": {
-                                 "type": "integer",
-                                 "minimum": 0,
-                                 "default": 0
-                              },
-                              "datasource": {
-                                 "description": "Datasource to use for annotation.",
-                                 "type": "string"
-                              },
-                              "enable": {
-                                 "description": "Whether annotation is enabled.",
-                                 "type": "boolean",
-                                 "default": true
-                              },
-                              "hide": {
-                                 "description": "Whether to hide annotation.",
-                                 "type": "boolean",
-                                 "default": false
-                              },
-                              "iconColor": {
-                                 "description": "Annotation icon color.",
-                                 "type": "string"
-                              },
-                              "name": {
-                                 "description": "Name of annotation.",
-                                 "type": "string"
-                              },
-                              "type": {
-                                 "type": "string",
-                                 "default": "dashboard"
-                              },
-                              "rawQuery": {
-                                 "description": "Query for annotation data.",
-                                 "type": "string"
-                              },
-                              "showIn": {
-                                 "type": "integer",
-                                 "minimum": 0,
-                                 "default": 0
-                              }
-                           }
+                  "description": "Annotations.",
+                  "type": "array",
+                  "items": {
+                     "type": "object",
+                     "required": [
+                        "builtIn",
+                        "datasource",
+                        "enable",
+                        "type",
+                        "showIn"
+                     ],
+                     "properties": {
+                        "builtIn": {
+                           "type": "integer",
+                           "minimum": 0,
+                           "default": 0
+                        },
+                        "datasource": {
+                           "description": "Datasource to use for annotation.",
+                           "type": "string"
+                        },
+                        "enable": {
+                           "description": "Whether annotation is enabled.",
+                           "type": "boolean",
+                           "default": true
+                        },
+                        "hide": {
+                           "description": "Whether to hide annotation.",
+                           "type": "boolean",
+                           "default": false
+                        },
+                        "iconColor": {
+                           "description": "Annotation icon color.",
+                           "type": "string"
+                        },
+                        "name": {
+                           "description": "Name of annotation.",
+                           "type": "string"
+                        },
+                        "type": {
+                           "type": "string",
+                           "default": "dashboard"
+                        },
+                        "rawQuery": {
+                           "description": "Query for annotation data.",
+                           "type": "string"
+                        },
+                        "showIn": {
+                           "type": "integer",
+                           "minimum": 0,
+                           "default": 0
                         }
                      }
                   }
