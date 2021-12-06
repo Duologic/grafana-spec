@@ -624,14 +624,79 @@
                },
                "fieldConfig": {
                   "type": "object",
+                  "required": [
+                     "defaults",
+                     "overrides"
+                  ],
                   "properties": {
                      "defaults": {
                         "type": "object",
-                        "required": [
-                           "custom"
-                        ],
                         "properties": {
+                           "displayName": {
+                              "description": "The display value for this field.  This supports template variables blank is auto",
+                              "type": "string"
+                           },
+                           "displayNameFromDS": {
+                              "description": "This can be used by data sources that return and explicit naming structure for values and labels\nWhen this property is configured, this value is used rather than the default naming strategy.",
+                              "type": "string"
+                           },
+                           "description": {
+                              "description": "Human readable field metadata",
+                              "type": "string"
+                           },
+                           "path": {
+                              "description": "An explict path to the field in the datasource.  When the frame meta includes a path,\nThis will default to `${frame.meta.path}/${field.name}\n\nWhen defined, this value can be used as an identifier within the datasource scope, and\nmay be used to update the results",
+                              "type": "string"
+                           },
+                           "writeable": {
+                              "description": "True if data source can write a value to the path.  Auth/authz are supported separately",
+                              "type": "boolean"
+                           },
+                           "filterable": {
+                              "description": "True if data source field supports ad-hoc filters",
+                              "type": "boolean"
+                           },
+                           "unit": {
+                              "description": "Numeric Options",
+                              "type": "string"
+                           },
+                           "decimals": {
+                              "description": "Significant digits (for display)",
+                              "type": "integer",
+                              "minimum": 0
+                           },
+                           "min": {
+                              "type": "integer",
+                              "minimum": 0
+                           },
+                           "max": {
+                              "type": "integer",
+                              "minimum": 0
+                           },
+                           "mappings": {
+                              "description": "Convert input values into a display string\n\nTODO this one corresponds to a complex type with\ngenerics on the typescript side. Ouch. Will\neither need special care, or we'll just need to\naccept a very loosely specified schema. It's very\nunlikely we'll be able to translate cue to\ntypescript generics in the general case, though\nthis particular one *may* be able to work.",
+                              "type": "array",
+                              "items": {
+                                 "type": "object"
+                              }
+                           },
+                           "thresholds": {
+                              "$ref": "#/components/schemas/Family.ThresholdsConfig"
+                           },
+                           "color": {
+                              "$ref": "#/components/schemas/Family.FieldColor"
+                           },
+                           "links": {
+                              "description": "// The behavior when clicking on a result",
+                              "type": "array",
+                              "items": {}
+                           },
+                           "noValue": {
+                              "description": "Alternative to empty string",
+                              "type": "string"
+                           },
                            "custom": {
+                              "description": "custom is specified by the PanelFieldConfig field\nin panel plugin schemas.",
                               "type": "object"
                            }
                         }
@@ -677,20 +742,7 @@
                            }
                         }
                      }
-                  },
-                  "allOf": [
-                     {
-                        "required": [
-                           "defaults",
-                           "overrides"
-                        ]
-                     },
-                     {
-                        "required": [
-                           "defaults"
-                        ]
-                     }
-                  ]
+                  }
                }
             }
          },

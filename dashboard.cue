@@ -276,7 +276,9 @@
 
                 // custom is specified by the PanelFieldConfig field
                 // in panel plugin schemas.
-                custom?: {}
+                custom?: {...}
+
+                ...
             }
             overrides: [...{
                 matcher: {
@@ -303,7 +305,7 @@
         //   json containing panels with a third-party plugin that exists but
         //   is not currently installed would fail to validate.
         options: {...}
-        fieldConfig: defaults: custom: {...}
+        //fieldConfig: defaults: custom: {...}
         ...
     }
 
